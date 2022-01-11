@@ -18,12 +18,18 @@ var city = window.document.querySelector("input#input_city")
 var state = window.document.querySelector("input#input_state")
 
 // Professional Information
+var front_end = window.document.querySelector("input#option_front_end")
+var back_end = window.document.querySelector("input#option_back_end")
+var favorite_language = window.document.querySelector("select#select_list_programming_languages")
+var other_languages = window.document.querySelector("input#input_other_programming_languages")
+var personal_projects = window.document.querySelector("textarea#input_personal_projects")
 
 function send_data() {
     // let DDD_number = check_DDD(DDD)
     // let telephone_number = check_telephone(telephone)
-    // let sex = check_sex(man, woman)
-    // let house_number = check_house(house) 
+    // let sex = check_choice(man, woman)
+    // let house_number = check_house(house)
+    // let occupation_area = check_choice(front_end, back_end)
 } 
 
 function check_house(house_number) {
@@ -60,11 +66,11 @@ function check_telephone(telephone_number) {
     }
 }
 
-function check_sex(man_option, woman_option) {
-    if (man_option.checked) {
-        return man_option.value
-    } else if (woman_option.checked) {
-        return woman_option.value
+function check_choice(option_one, option_two) {
+    if (option_one.checked) {
+        return option_one.value
+    } else if (option_two.checked) {
+        return option_two.value
     }
 }
 
