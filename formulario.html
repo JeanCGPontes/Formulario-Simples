@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="estilo.css">
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <h1>Formulário</h1>
+    </header>
+
+    <!-- Section -->
+    <section>
+
+        <!-- Personal Data -->
+        <div id="section_personal_data">
+            <!-- Subtitle -->
+            <div id="personal_data_subtitle">
+                <h2>Informações Pessoais</h2>
+            </div>
+            <!-- Content -->
+            <div id="personal_data_content">
+                <div id="name">
+                    <label for="input_name">Nome:</label>
+                    <input type="text" name="input_name" id="input_name" size="20">
+                    <label for="input_surname">Sobrenome:</label>
+                    <input type="text" name="input_surname" id="input_surname" size="20">
+                </div>
+                <div id="email">
+                    <label for="input_email">Email:</label>
+                    <input type="email" name="input_email" id="input_email" placeholder="user@example.com">
+                </div>
+                <div id="telephone">
+                    <label for="input_telephone">Telefone:</label>
+                    <input type="text" name="input_ddd" id="input_ddd" maxlength="2" size="2" placeholder="DDD">
+                    <input type="text" name="input_telephone" id="input_telephone" maxlength="9" size="9" placeholder="Telefone">
+                </div>
+                <div id="sex">
+                    <label for="option_man">Sexo:</label>
+                    <input type="radio" name="option_sex" id="option_man" value="Homem" checked>
+                    <label for="option_man">Homem</label>
+                    <input type="radio" name="option_sex" id="option_woman" value="Mulher">
+                    <label for="option_woman">Mulher</label>
+                </div>
+                <div id="birth_date">
+                    <label for="input_birth_date">Data de Nascimento:</label>
+                    <input type="date" name="input_birth_date" id="input_birth_date">
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Data -->
+        <div id="section_location_data">
+            <!-- Subtitle  -->
+            <div id="location_data_subtitle">
+                <h2>Informações Locais</h2>
+            </div>
+            <!-- Content -->
+            <div id="location_data_content">
+                <div id="cep">
+                    <label for="input_cep">CEP:</label>
+                    <input type="text" name="input_cep" id="input_cep" size="8" maxlength="8" onblur="update_address_values()">
+                </div>
+                <div id="address">
+                    <label for="input_address">Endereço:</label>
+                    <input type="text" name="input_address" id="input_address" size="20">
+                    <label for="input_house_number">N°:</label>
+                    <input type="text" name="input_house_number" id="input_house_number" maxlength="6" size="6">
+                </div>
+                <div id="neighborhood">
+                    <label for="input_neighborhood">Bairro:</label>
+                    <input type="text" name="input_neighborhood" id="input_neighborhood">
+                </div>
+                <div id="city">
+                    <label for="input_city">Cidade:</label>
+                    <input type="text" name="input_city" id="input_city">
+                </div>  
+                <div id="state">
+                    <label for="input_state">Estado:</label>
+                    <input type="text" name="input_state" id="input_state">
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Information -->
+        <div id="section_professional_information">
+            <!-- Subtitle -->
+            <div id="professional_information_subtitle">
+                <h2>Informações Profissionais</h2>
+            </div>
+            <!-- Content -->
+            <div id="professional_information_content">
+                <div id="occupation_area">
+                    <label for="option_front_end">Qual sua área de atuação?</label>
+                    <input type="radio" name="occupation_area_option" id="option_front_end" checked>
+                    <label for="option_front_end">Front-end</label>
+                    <input type="radio" name="occupation_area_option" id="option_back_end">
+                    <label for="option_back_end">Back-end</label>
+                </div>
+                <div id="list_programming_languages">
+                    <label for="list_programming_languages">Qual linguagem de programação você mais tem experiência?</label>
+                    <select name="select_list_programming_languages" id="select_list_programming_languages">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="php">Php</option>
+                        <option value="java">Java</option>
+                        <option value="c">C</option>
+                        <option value="c++">C++</option>
+                    </select>
+                </div>
+                <div id="other_programming_languages">
+                    <label for="input_other_programming_languages">Quais outras linguagens você utiliza?</label><br>
+                    <input type="text" name="input_other_programming_languages" id="input_other_programming_languages" size="30">
+                </div>
+                <div id="personal_projects">
+                    <label for="input_personal_projects">Conte sobre alguns de seus projetos:</label>
+                    <textarea name="input_personal_projects" id="input_personal_projects" cols="50" rows="8"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div id="section_buttons">
+            <input type="button" value="Enviar" onclick="send_data()">
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
