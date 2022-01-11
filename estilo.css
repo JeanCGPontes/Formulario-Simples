@@ -1,0 +1,49 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    width: 800px;
+    margin: auto;
+    border-radius: 10px;
+    border-color: rgba(128, 128, 128, 0.267);
+    border-style: solid;
+    border-width: 1px;
+}
+
+div#personal_data_subtitle, div#location_data_subtitle, div#professional_information_subtitle {
+    width: 600px;
+    margin: auto;
+}
+
+div#personal_data_content, div#location_data_content, div#professional_information_content {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.267);
+    border-radius: 4px;
+    padding: 20px;
+    width: 600px;
+    margin: auto;
+}
+
+div#name, div#email, div#telephone, div#sex,
+div#cep, div#address, div#neighborhood, div#city,
+div#occupation_area, div#list_programming_languages, div#other_programming_languages {
+    margin-bottom: 20px;
+}
+
+textarea#input_personal_projects {
+    resize: none;
+}
+
+footer {
+    text-align: center;
+
+}
