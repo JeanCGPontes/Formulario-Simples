@@ -18,21 +18,21 @@ var city = window.document.querySelector("input#input_city")
 var state = window.document.querySelector("input#input_state")
 
 // Professional Information
-var front_end = window.document.querySelector("input#option_front_end")
-var back_end = window.document.querySelector("input#option_back_end")
-var favorite_language = window.document.querySelector("select#select_list_programming_languages")
-var other_languages = window.document.querySelector("input#input_other_programming_languages")
-var personal_projects = window.document.querySelector("textarea#input_personal_projects")
+var frontEnd = window.document.querySelector("input#option_front_end")
+var backEnd = window.document.querySelector("input#option_back_end")
+var favoriteLanguage = window.document.querySelector("select#select_list_programming_languages")
+var otherLanguages = window.document.querySelector("input#input_other_programming_languages")
+var personalProjects = window.document.querySelector("textarea#input_personal_projects")
 
-function send_data() {
-    // let DDD_number = check_DDD(DDD)
-    // let telephone_number = check_telephone(telephone)
-    // let sex = check_choice(man, woman)
-    // let house_number = check_house(house)
-    // let occupation_area = check_choice(front_end, back_end)
-} 
+function sendData() {
+    let DDD_number = checkDDD(DDD)
+    let telephone_number = checkTelephone(telephone)
+    let sex = checkChoice(man, woman)
+    let house_number = checkHouse(house)
+    let occupation_area = checkChoice(frontEnd, backEnd)
+}
 
-function check_house(house_number) {
+function checkHouse(house_number) {
     if (house_number.value.length === 0) {
         window.alert("Número da casa incorreto, por favor verifique e tente novamente.")
     } else if (Number(house_number.value) > 0 && Number(house_number.value) <= 999999) {
@@ -42,7 +42,7 @@ function check_house(house_number) {
     }
 }
 
-function check_DDD(DDD_number) {
+function checkDDD(DDD_number) {
     if (DDD_number.value.length === 0) {
         window.alert("DDD incorreto, por favor verifique e tente novamente.")
     } else {
@@ -54,7 +54,7 @@ function check_DDD(DDD_number) {
     }
 }
 
-function check_telephone(telephone_number) {
+function checkTelephone(telephone_number) {
     if (telephone_number.value.length !== 9) {
         window.alert("Número de telefone incorreto, por favor verifique e tente novamente.")
     } else {
@@ -66,7 +66,7 @@ function check_telephone(telephone_number) {
     }
 }
 
-function check_choice(option_one, option_two) {
+function checkChoice(option_one, option_two) {
     if (option_one.checked) {
         return option_one.value
     } else if (option_two.checked) {
@@ -74,7 +74,7 @@ function check_choice(option_one, option_two) {
     }
 }
 
-function check_cep(cep_number) {
+function checkCep(cep_number) {
     if (cep_number.value.length !== 8) {
         window.alert("CEP inválido, por favor verifique e tente novamente.")
     } else if (Number(cep_number.value) > 0 && Number(cep_number.value) <= 99999999) {
@@ -84,14 +84,14 @@ function check_cep(cep_number) {
     }
 }
 
-function http_get(url) {
+function getHTTP(url) {
     let http_request = new XMLHttpRequest()
     http_request.open("GET", url, false)
     http_request.send()
     return http_request
 }
 
-function get_cep_information(object) {
+function getCepInformation(object) {
     return {
         address: object.logradouro,
         neighborhood: object.bairro,
@@ -100,21 +100,26 @@ function get_cep_information(object) {
     }
 }
 
-function parsing_JSON(requisition_response) {
+function parsingJSON(requisition_response) {
     return JSON.parse(requisition_response.response)
 }
 
-function update_address_values() {
-    let url = `https://viacep.com.br/ws/${check_cep(CEP)}/json/`
-    let requisition_response = http_get(url)
-    let object = parsing_JSON(requisition_response)
+function updateAddressValues() {
+    let url = `https://viacep.com.br/ws/${checkCep(CEP)}/json/`
+    let requisitionResponse = getHTTP(url)
+    let object = parsingJSON(requisitionResponse)
     if (object.erro) {
         window.alert("CEP inválido, por favor verifique e tente novamente.")
     } else {
-        let information = get_cep_information(object)
+        let information = getCepInformation(object)
         address.value = (information.address)
         neighborhood.value = (information.neighborhood)
         city.value = (information.city)
         state.value = (information.state)
     }
 }
+
+function refreshPage() {
+    location.reload()
+}
+
