@@ -39,11 +39,16 @@ div#occupation_area, div#list_programming_languages, div#other_programming_langu
     margin-bottom: 20px;
 }
 
+div#section_buttons {
+    width: 600px;
+    margin: 20px auto auto;
+}
+
 textarea#input_personal_projects {
     resize: none;
 }
 
 footer {
     text-align: center;
-
+    margin-top: 20px;
 }
