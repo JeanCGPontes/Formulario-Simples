@@ -72,7 +72,7 @@
             <div id="location_data_content">
                 <div id="cep">
                     <label for="input_cep">CEP:</label>
-                    <input type="text" name="input_cep" id="input_cep" size="8" maxlength="8" onblur="update_address_values()">
+                    <input type="text" name="input_cep" id="input_cep" size="8" maxlength="8" onblur="updateAddressValues()">
                 </div>
                 <div id="address">
                     <label for="input_address">Endereço:</label>
@@ -134,14 +134,14 @@
 
         <!-- Buttons -->
         <div id="section_buttons">
-            <input type="button" value="Enviar" onclick="send_data()">
+            <input type="button" value="Enviar" onclick="sendData()">
+            <input type="button" value="Limpar" onclick="refreshPage()">
         </div>
-
     </section>
 
     <!-- Footer -->
     <footer>
-
+        <p>&copy;Jean C. G. Pontes</p>
     </footer>
 
     <!-- Script -->
